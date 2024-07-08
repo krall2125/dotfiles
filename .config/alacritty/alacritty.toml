@@ -1,0 +1,14 @@
+import = [
+    "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
+]
+
+shell = "zsh"
+
+[window]
+blur = true
+startup_mode = "Maximized"
+#dynamic_title = false
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+size = 10.0
