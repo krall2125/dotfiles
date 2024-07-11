@@ -1,5 +1,5 @@
 import = [
-    "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
+    "~/.config/alacritty/alacritty-theme/themes/catppuccin_mocha.toml"
 ]
 
 shell = "zsh"
@@ -10,5 +10,5 @@ startup_mode = "Maximized"
 #dynamic_title = false
 
 [font]
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
-size = 10.0
+normal = { family = "Iosevka Nerd Font", style = "Regular" }
+size = 12.0

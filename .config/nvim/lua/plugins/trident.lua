@@ -1,4 +1,4 @@
 return {
     "trident.nvim",
-    dir = "~/trident.nvim/"
+    dir = "~/projects/trident.nvim/"
 }

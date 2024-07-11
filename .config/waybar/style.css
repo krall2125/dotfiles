@@ -1,7 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "JetBrainsMono Nerd Font", "FantasqueSansMono Nerd Font", Iosevka, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 12px;
+    font-family: "Iosevka Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
 }
 
 window#waybar {
