@@ -9,12 +9,12 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartindent = true
+vim.opt.guicursor="n-v-c-i:block"
 
 vim.wo.relativenumber = true
 
 vim.g.mapleader = ' '
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
+vim.g.netrw_keepdir = 0
 
 vim.o.termguicolors = true

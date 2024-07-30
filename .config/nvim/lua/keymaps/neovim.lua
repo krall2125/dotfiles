@@ -1,3 +1,17 @@
+-- Move around wrapped lines
+vim.keymap.set("n", "<Down>", "gj", {noremap = true, silent = true})
+vim.keymap.set("n", "<Up>", "gk", {noremap = true, silent = true})
+vim.keymap.set("v", "<Down>", "gj", {noremap = true, silent = true})
+vim.keymap.set("v", "<Up>", "gk", {noremap = true, silent = true})
+
+vim.keymap.set("n", "j", "gj", {noremap = true, silent = true})
+vim.keymap.set("n", "k", "gk", {noremap = true, silent = true})
+vim.keymap.set("v", "j", "gj", {noremap = true, silent = true})
+vim.keymap.set("v", "k", "gk", {noremap = true, silent = true})
+
+vim.keymap.set("i", "<Down>", "<C-o>gj", {noremap = true, silent = true})
+vim.keymap.set("i", "<Up>", "<C-o>gk", {noremap = true, silent = true})
+
 -- Move around split panes
 
 vim.keymap.set("n", "<leader>l", "<C-w><Right>")
@@ -30,3 +44,11 @@ vim.keymap.set("i", "<S-Tab>", "<Tab>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Text deletion
+
+vim.keymap.set("v", "d", "\"_d")
+vim.keymap.set("n", "dd", "\"_dd")
+
+-- Open netrw
+vim.keymap.set("n", "<leader>nx", "<cmd>Explore<CR>")

@@ -9,5 +9,3 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, {silent = true})
 vim.keymap.set("n", "<leader>fg", builtin.git_files, {silent = true})
 vim.keymap.set("n", "<leader>fp", builtin.oldfiles, {silent = true})
 vim.keymap.set("n", "<leader>fk", builtin.keymaps, {silent = true})
-
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)

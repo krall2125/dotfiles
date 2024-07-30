@@ -6,7 +6,6 @@ require("startup.afterplugins")
 -- keymaps.lsp gets included in config.lsp
 -- because it's a special kind of keymaps (nvim-cmp keymaps)
 require("keymaps.neovim")
-require("keymaps.nvim-tree")
 require("keymaps.telescope")
 require("keymaps.cloak")
 require("keymaps.trouble")
