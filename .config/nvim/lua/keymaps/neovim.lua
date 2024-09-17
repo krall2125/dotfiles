@@ -52,3 +52,5 @@ vim.keymap.set("n", "dd", "\"_dd")
 
 -- Open netrw
 vim.keymap.set("n", "<leader>nx", "<cmd>Explore<CR>")
+
+vim.keymap.set("x", "<leader>cs", "<cmd>Silicon<CR>")
