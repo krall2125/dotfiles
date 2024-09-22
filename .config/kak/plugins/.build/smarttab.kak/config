@@ -1,7 +1,7 @@
 try %{ 
 
-    require-module smarttab
-    hook global WinSetOption .* expandtab
+	require-module smarttab
+	hook global WinSetOption .* noexpandtab
  } catch %{
     echo -debug "Error while evaluating 'smarttab.kak' configuration: %val{error}"
 

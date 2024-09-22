@@ -1,8 +1,8 @@
 try %{ 
 
-        require-module peneira
-        hook global WinCreate .* %{ add-highlighter window/number-lines number-lines -relative }
-     } catch %{
+		require-module peneira
+		hook global WinCreate .* %{ add-highlighter window/number-lines number-lines -relative }
+	 } catch %{
     echo -debug "Error while evaluating 'peneira' configuration: %val{error}"
 
     set-option -add current plug_conf_errors "Error while evaluating 'peneira' configuration:"

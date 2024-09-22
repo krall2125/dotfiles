@@ -1,45 +1,46 @@
 # Install plugins
 evaluate-commands %sh{
-    plugins="$kak_config/plugins"
-    mkdir -p "$plugins"
-    [ ! -e "$plugins/plug.kak" ] && \
-        git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
-    printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
+	plugins="$kak_config/plugins"
+	mkdir -p "$plugins"
+	[ ! -e "$plugins/plug.kak" ] && \
+		git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
+	printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
 }
+
 plug "andreyorst/plug.kak" noload
 
 plug "kakoune-lsp/kakoune-lsp" do %{
-    cargo install --locked --force --path .
-    # optional: if you want to use specific language servers
-    mkdir -p ~/.config/kak-lsp
-    cp -n kak-lsp.toml ~/.config/kak-lsp/
+	cargo install --locked --force --path .
+	# optional: if you want to use specific language servers
+	mkdir -p ~/.config/kak-lsp
+	cp -n kak-lsp.toml ~/.config/kak-lsp/
 }
 
 plug "andreyorst/base16-gruvbox.kak" noload do %{
-    mkdir -p $HOME/.config/kak/colors
-    find $PWD -type f -name "*.kak" -exec ln -sf {} $HOME/.config/kak/colors/ \;
+	mkdir -p $HOME/.config/kak/colors
+	find $PWD -type f -name "*.kak" -exec ln -sf {} $HOME/.config/kak/colors/ \;
 } config %{
-    colorscheme base16-gruvbox-dark-soft # or any other variant
+	colorscheme base16-gruvbox-dark-medium
 }
 
 plug "lePerdu/kakboard" %{
-    hook global WinCreate .* %{ kakboard-enable }
+	hook global WinCreate .* %{ kakboard-enable }
 }
 
 plug "andreyorst/smarttab.kak" defer smarttab %{
-    set-option global softtabstop 4
+	set-option global softtabstop 8
 } config %{
-    require-module smarttab
-    hook global WinSetOption .* expandtab
+	require-module smarttab
+	hook global WinSetOption .* noexpandtab
 }
 
 plug "gustavo-hms/luar" %{
-    plug "gustavo-hms/peneira" %{
-        require-module peneira
-        hook global WinCreate .* %{ add-highlighter window/number-lines number-lines -relative }
-    }
+	plug "gustavo-hms/peneira" %{
+		require-module peneira
+		hook global WinCreate .* %{ add-highlighter window/number-lines number-lines -relative }
+	}
 } config %{
-    set-option global luar_interpreter luajit
+	set-option global luar_interpreter luajit
 }
 
 # Set basic options
@@ -54,18 +55,18 @@ map global normal <a-k> 'x"aZy<a-;>kPZ"azdz'
 map global user f %{:peneira-files<ret>} -docstring "Find files"
 
 hook global InsertCompletionShow .* %{
-    map window insert <tab> <c-n>
-    map window insert <s-tab> <c-p>
+	map window insert <tab> <c-n>
+	map window insert <s-tab> <c-p>
 }
 
 hook global InsertCompletionHide .* %{
-    unmap window insert <tab> <c-n>
-    unmap window insert <s-tab> <c-p>
+	unmap window insert <tab> <c-n>
+	unmap window insert <s-tab> <c-p>
 }
 
-# Expanding tabs
-set-option global tabstop 4
-set-option global indentwidth 4
+# Tab stuff
+set-option global tabstop 8
+set-option global indentwidth 8
 
 map global user l %{:enter-user-mode lsp<ret>} -docstring "LSP mode"
 

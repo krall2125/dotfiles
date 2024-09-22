@@ -1,6 +1,6 @@
 try %{ 
 
-    hook global WinCreate .* %{ kakboard-enable }
+	hook global WinCreate .* %{ kakboard-enable }
  } catch %{
     echo -debug "Error while evaluating 'kakboard' configuration: %val{error}"
 

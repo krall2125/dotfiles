@@ -8,6 +8,7 @@ vim.opt.ignorecase = true
 vim.opt.smartindent = true
 vim.opt.guicursor="n-v-c-i:block"
 vim.g.filetype_v = "v"
+vim.g.autoformat = false
 
 vim.cmd("set termguicolors")
 vim.cmd("set t_Co=256")

@@ -1,12 +1,12 @@
 try %{ 
 
-    plug "gustavo-hms/peneira" %{
-        require-module peneira
-        hook global WinCreate .* %{ add-highlighter window/number-lines number-lines -relative }
-    }
+	plug "gustavo-hms/peneira" %{
+		require-module peneira
+		hook global WinCreate .* %{ add-highlighter window/number-lines number-lines -relative }
+	}
 
 
-    set-option global luar_interpreter luajit
+	set-option global luar_interpreter luajit
  } catch %{
     echo -debug "Error while evaluating 'luar' configuration: %val{error}"
 

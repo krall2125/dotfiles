@@ -3,7 +3,7 @@ local cmp = require("cmp")
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "clangd", "zls", "eslint", "rust_analyzer" }
+    ensure_installed = { "lua_ls", "clangd", "zls", "rust_analyzer" }
 })
 
 local lspconfig = require("lspconfig")
