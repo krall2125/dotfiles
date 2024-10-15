@@ -16,11 +16,16 @@ plug "kakoune-lsp/kakoune-lsp" do %{
 	cp -n kak-lsp.toml ~/.config/kak-lsp/
 }
 
-plug "andreyorst/base16-gruvbox.kak" noload do %{
+plug "Nulo/rose-pine.kak" noload do %{
 	mkdir -p $HOME/.config/kak/colors
 	find $PWD -type f -name "*.kak" -exec ln -sf {} $HOME/.config/kak/colors/ \;
 } config %{
-	colorscheme base16-gruvbox-dark-medium
+	colorscheme rose-pine
+}
+
+plug "andreyorst/base16-gruvbox.kak" noload do %{
+	mkdir -p $HOME/.config/kak/colors
+	find $PWD -type f -name "*.kak" -exec ln -sf {} $HOME/.config/kak/colors/ \;
 }
 
 plug "lePerdu/kakboard" %{

@@ -48,11 +48,11 @@
     0.92
   ],
   "misc.context_restores_color": true,
-  "document.autosave_backups": true,
+  "document.autosave_backups": false,
   "document.autosave_interval": 10,
   "display.colorspace_EOTF": 2.2,
   "display.colorspace": "srgb",
-  "scratchpad.last_opened_scratchpad": "/home/janr/.local/share/mypaint/scratchpads/autosave.ora",
+  "scratchpad.last_opened_scratchpad": "/home/krall/.local/share/mypaint/scratchpads/autosave.ora",
   "workspace.layout": {
     "left_sidebar": {
       "groups": [
@@ -63,16 +63,16 @@
             ]
           ],
           "active_page": 0,
-          "w": 307,
-          "h": 923
+          "w": 320,
+          "h": 412
         },
         {
           "tools": [],
           "active_page": -1
         }
       ],
-      "w": 307,
-      "h": 930
+      "w": 320,
+      "h": 929
     },
     "right_sidebar": {
       "groups": [
@@ -83,8 +83,8 @@
             ]
           ],
           "active_page": 0,
-          "w": 241,
-          "h": 231
+          "w": 243,
+          "h": 237
         },
         {
           "tools": [
@@ -93,23 +93,23 @@
             ]
           ],
           "active_page": 0,
-          "w": 241,
-          "h": 687
+          "w": 243,
+          "h": 436
         },
         {
           "tools": [],
           "active_page": -1
         }
       ],
-      "w": 241,
-      "h": 930
+      "w": 243,
+      "h": 929
     },
     "floating": [],
     "position": {
       "x": 0,
       "y": 0,
       "w": 1916,
-      "h": 1033
+      "h": 1032
     },
     "autohide": true,
     "fullscreen": false,
@@ -463,7 +463,7 @@
   "ui.file_compat_warning_severe": true,
   "brush_chooser.default.window_size": [
     256,
-    300
+    306
   ],
   "colors.history": [
     "#aa6633",
