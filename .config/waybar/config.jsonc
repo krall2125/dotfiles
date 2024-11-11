@@ -38,6 +38,9 @@
             "default": ""
         }
     },
+    "hyprland/window": {
+        "max-length": 100
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,

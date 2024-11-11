@@ -1,57 +1,55 @@
-# Install plugins
+nop %sh{
+	mkdir -p "$kak_config/autoload"
+	[ ! -e "$kak_config/autoload/standard-library" ] && \
+		ln -s "$kak_runtime/rc" "$kak_config/autoload/standard-library"
+}
+
 evaluate-commands %sh{
-	plugins="$kak_config/plugins"
-	mkdir -p "$plugins"
-	[ ! -e "$plugins/plug.kak" ] && \
-		git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
-	printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
+	mkdir -p $HOME/.config/kak/autoload/bundle/
+	[ ! -e "$kak_config/autoload/bundle" ] && \
+            git clone https://codeberg.org/jdugan6240/kak-bundle $HOME/.config/kak/autoload/bundle/kak-bundle
 }
 
-plug "andreyorst/plug.kak" noload
-
-plug "kakoune-lsp/kakoune-lsp" do %{
-	cargo install --locked --force --path .
-	# optional: if you want to use specific language servers
-	mkdir -p ~/.config/kak-lsp
-	cp -n kak-lsp.toml ~/.config/kak-lsp/
+bundle kak-lsp https://github.com/kak-lsp/kak-lsp %{
+	map global user l %{:enter-user-mode lsp<ret>} -docstring "LSP mode"
 }
 
-plug "Nulo/rose-pine.kak" noload do %{
-	mkdir -p $HOME/.config/kak/colors
-	find $PWD -type f -name "*.kak" -exec ln -sf {} $HOME/.config/kak/colors/ \;
-} config %{
-	colorscheme rose-pine
-}
-
-plug "andreyorst/base16-gruvbox.kak" noload do %{
-	mkdir -p $HOME/.config/kak/colors
-	find $PWD -type f -name "*.kak" -exec ln -sf {} $HOME/.config/kak/colors/ \;
-}
-
-plug "lePerdu/kakboard" %{
+bundle kakboard https://github.com/lePerdu/kakboard %{
 	hook global WinCreate .* %{ kakboard-enable }
 }
 
-plug "andreyorst/smarttab.kak" defer smarttab %{
+bundle smarttab https://github.com/andreyorst/smarttab.kak %{} %{
 	set-option global softtabstop 8
-} config %{
-	require-module smarttab
 	hook global WinSetOption .* noexpandtab
 }
 
-plug "gustavo-hms/luar" %{
-	plug "gustavo-hms/peneira" %{
-		require-module peneira
-		hook global WinCreate .* %{ add-highlighter window/number-lines number-lines -relative }
-	}
-} config %{
+bundle luar https://github.com/gustavo-hms/luar %{
 	set-option global luar_interpreter luajit
+}
+
+bundle peneira https://github.com/gustavo-hms/peneira %{
+	require-module peneira
+	hook global WinCreate .* %{ add-highlighter window/number-lines number-lines -relative -hlcursor }
+}
+
+bundle-noload base16-gruvbox https://github.com/andreyorst/base16-gruvbox.kak
+
+bundle-install-hook base16-gruvbox %{
+	# Post-install code here...
+	mkdir -p ${kak_config}/colors
+	ln -sf "${kak_opt_bundle_path}/base16-gruvbox" "${kak_config}/colors/"
+}
+
+colorscheme base16-gruvbox-dark-hard # or any other variant
+
+bundle kakoune-ghwiki https://gitlab.com/Screwtapello/kakoune-ghwiki %{} %{
+	ghwiki-enable
 }
 
 # Set basic options
 
 # Set relative line numbers
-add-highlighter global/ number-lines -relative
+add-highlighter global/ number-lines -relative -hlcursor
 
 # Keymaps
 map global normal <a-j> 'xdp'
@@ -73,7 +71,7 @@ hook global InsertCompletionHide .* %{
 set-option global tabstop 8
 set-option global indentwidth 8
 
-map global user l %{:enter-user-mode lsp<ret>} -docstring "LSP mode"
+add-highlighter global/ wrap -word -indent
 
 # Start the lsp
 lsp-enable

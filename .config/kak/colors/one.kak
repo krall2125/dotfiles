@@ -1,0 +1,1 @@
+/home/krallbert/.config/kak/bundle/one.kak

@@ -30,20 +30,18 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-exec --no-startup-id pipewire
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # exec --no-startup-id nm-applet
 
 exec_always xinput set-prop 11 "libinput Accel Profile Enabled" 0 1 0
 
-exec_always emacs --daemon
-
 exec --no-startup-id xrandr -r 144
 
 exec --no-startup-id setxkbmap pl
 exec_always --no-startup-id autotiling
-exec_always ln -sf $XDG_RUNTIME_DIR/{app/com.discordapp.Discord,}/discord-ipc-0
+
+exec --no-startup-id emacs --daemon
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -126,8 +124,9 @@ bindsym $mod+q exec firefox
 bindsym $mod+x exec boomer
 bindsym Print exec flameshot gui
 bindsym $mod+m exec mypaint
-bindsym $mod+v exec emacsclient --create-frame ~
 bindsym $mod+Control+l exec i3lock -i ~/Wallpapers/gruvbox.png
+
+bindsym $mod+v exec emacsclient -c
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -209,5 +208,5 @@ bar {
         status_command i3status -c /etc/i3status.conf
 }
 
-exec --no-startup-id feh --bg-scale ~/Wallpapers/gruvbox.png
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom -f

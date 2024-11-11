@@ -1,0 +1,1 @@
+trigger-user-hook bundle-loaded=base16-gruvbox

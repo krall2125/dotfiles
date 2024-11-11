@@ -2,6 +2,7 @@ syntax on
 
 let g:mapleader=' '
 
+set tabstop=8
 set smarttab
 set autoindent
 set backspace=indent,eol,start belloff=all
@@ -27,6 +28,9 @@ Plug 'rose-pine/vim', { 'as': 'rose-pine' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'vim-scripts/NumUtils'
 
 call plug#end()
 
@@ -69,6 +73,15 @@ nnoremap <silent> <lt> <lt><lt>
 nnoremap <silent> > >>
 vnoremap <silent> <lt> <lt>gv
 vnoremap <silent> > >gv
+
+vnoremap <silent> J :m '>+1<CR>gv=gv
+vnoremap <silent> K :m '<-2<CR>gv=gv
+
+nnoremap <silent> <leader>ff :Files .<CR>
+nnoremap <silent> <leader>fg :GFiles<CR>
+nnoremap <silent> <leader>fc :Colors<CR>
+
+set pastetoggle=<F3>
 
 function! s:on_lsp_buffer_enabled() abort
 	setlocal omnifunc=lsp#complete

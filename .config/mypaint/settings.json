@@ -39,7 +39,7 @@
   "ui.dark_theme_variant": true,
   "ui.rendered_tile_cache_size": 16384,
   "saving.default_format": "openraster",
-  "brushmanager.selected_brush": "ramon/Delayed_",
+  "brushmanager.selected_brush": "ramon/Pen",
   "brushmanager.selected_groups": [],
   "frame.color_rgba": [
     0.12,
@@ -52,68 +52,33 @@
   "document.autosave_interval": 10,
   "display.colorspace_EOTF": 2.2,
   "display.colorspace": "srgb",
-  "scratchpad.last_opened_scratchpad": "/home/krall/.local/share/mypaint/scratchpads/autosave.ora",
+  "scratchpad.last_opened_scratchpad": "/home/krallbert/.local/share/mypaint/scratchpads/autosave.ora",
   "workspace.layout": {
     "left_sidebar": {
       "groups": [
         {
-          "tools": [
-            [
-              "MyPaintLayersTool"
-            ]
-          ],
-          "active_page": 0,
-          "w": 320,
-          "h": 412
-        },
-        {
           "tools": [],
           "active_page": -1
         }
       ],
-      "w": 320,
-      "h": 929
+      "w": 23,
+      "h": 934
     },
     "right_sidebar": {
       "groups": [
         {
-          "tools": [
-            [
-              "MyPaintHSVCubeTool"
-            ]
-          ],
-          "active_page": 0,
-          "w": 243,
-          "h": 237
-        },
-        {
-          "tools": [
-            [
-              "MyPaintModeOptionsTool"
-            ]
-          ],
-          "active_page": 0,
-          "w": 243,
-          "h": 436
-        },
-        {
           "tools": [],
           "active_page": -1
         }
       ],
-      "w": 243,
-      "h": 929
+      "w": 23,
+      "h": 934
     },
     "floating": [],
-    "position": {
-      "x": 0,
-      "y": 0,
-      "w": 1916,
-      "h": 1032
-    },
+    "position": {},
     "autohide": true,
     "fullscreen": false,
-    "maximized": false
+    "maximized": true
   },
   "input.button_mapping": {
     "Button2": "PanViewMode",
@@ -140,9 +105,10 @@
   "input.devices": {
     "Glorious Model O:mouse:4": {},
     "Usb KeyBoard Usb KeyBoard Consumer Control:mouse:4": {},
-    "Virtual core XTEST pointer:mouse:2": {}
+    "Virtual core XTEST pointer:mouse:2": {},
+    "Wayland Pointer:mouse:2": {}
   },
-  "colors.current": "#ffffff",
+  "colors.current": "#000000",
   "colors.palette": {
     "name": "MyPaint Default",
     "columns": 7,
@@ -468,14 +434,18 @@
   "colors.history": [
     "#aa6633",
     "#003153",
-    "#000000",
     "#0cff00",
-    "#ffffff"
+    "#ffffff",
+    "#000000"
   ],
   "autorecovery.check_at_startup": false,
   "brush_chooser.default.selected_group": "Ramon",
   "color_chooser.fast_subset.window_size": [
     256,
-    258
+    264
+  ],
+  "color_chooser.default.window_size": [
+    256,
+    264
   ]
 }

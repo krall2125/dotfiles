@@ -7,3 +7,4 @@ dunst --daemon &
 swww-daemon &
 swww img ~/Wallpapers/gruvbox.png &
 nm-applet --indicator &
+doas kanata -c ~/.config/kanata/config.kbd &

@@ -1,1 +1,5 @@
-return { "tpope/vim-fugitive", "tpope/vim-surround", "tpope/vim-commentary" }
+return {
+	"tpope/vim-commentary",
+	"tpope/vim-fugitive",
+	"tpope/vim-surround",
+}

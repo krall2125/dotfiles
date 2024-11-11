@@ -1,1 +1,1 @@
-/home/krall/dotfiles/.config/kak/plugins/base16-gruvbox.kak/colors/base16-gruvbox-dark-medium.kak
+/home/krallbert/dotfiles/.config/kak/plugins/base16-gruvbox.kak/colors/base16-gruvbox-dark-medium.kak

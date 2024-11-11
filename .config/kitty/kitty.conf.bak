@@ -1,8 +1,7 @@
 # BEGIN_KITTY_THEME
-# Rosé Pine
+# Gruvbox Dark Hard
 include current-theme.conf
 # END_KITTY_THEME
-# font_family SauceCodePro Nerd Font
 font_size 12.0
 disable_ligatures always
 
@@ -11,7 +10,7 @@ shell_integration no-cursor
 map ctrl+shift+n no_op
 
 # BEGIN_KITTY_FONTS
-font_family      family="InconsolataMono Nerd Font"
+font_family      family="CaskaydiaCove Nerd Font Mono"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
