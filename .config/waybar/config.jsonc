@@ -39,7 +39,8 @@
         }
     },
     "hyprland/window": {
-        "max-length": 100
+        "max-length": 100,
+	"format": "{title}"
     },
     "keyboard-state": {
         "numlock": true,

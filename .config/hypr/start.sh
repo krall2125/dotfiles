@@ -3,7 +3,7 @@
 waybar &
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
-dunst --daemon &
+mako &
 swww-daemon &
 swww img ~/Wallpapers/gruvbox.png &
 nm-applet --indicator &
