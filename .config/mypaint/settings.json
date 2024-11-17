@@ -62,7 +62,7 @@
         }
       ],
       "w": 23,
-      "h": 934
+      "h": 929
     },
     "right_sidebar": {
       "groups": [
@@ -71,11 +71,16 @@
           "active_page": -1
         }
       ],
-      "w": 23,
-      "h": 934
+      "w": 243,
+      "h": 929
     },
     "floating": [],
-    "position": {},
+    "position": {
+      "x": 0,
+      "y": 0,
+      "w": 956,
+      "h": 1032
+    },
     "autohide": true,
     "fullscreen": false,
     "maximized": true
