@@ -19,10 +19,17 @@ vim.opt.shiftwidth = 8
 
 vim.opt.background = "dark"
 
+vim.opt.guicursor = "n-v-c-i:block"
+
 -- Enforce 8 sized tabs in all files
 vim.api.nvim_create_autocmd({"FileType"}, {
 	pattern = "*",
 	command = "setlocal noexpandtab tabstop=8 shiftwidth=8"
+})
+
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+	pattern = "*.h",
+	command = "set filetype=c"
 })
 
 -- Load plugins

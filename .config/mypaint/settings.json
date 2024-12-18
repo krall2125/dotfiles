@@ -62,25 +62,30 @@
         }
       ],
       "w": 23,
-      "h": 929
+      "h": 930
     },
     "right_sidebar": {
       "groups": [
+        {
+          "tools": [
+            [
+              "MyPaintLayersTool"
+            ]
+          ],
+          "active_page": 0,
+          "w": 320,
+          "h": 412
+        },
         {
           "tools": [],
           "active_page": -1
         }
       ],
-      "w": 243,
-      "h": 929
+      "w": 320,
+      "h": 930
     },
     "floating": [],
-    "position": {
-      "x": 0,
-      "y": 0,
-      "w": 956,
-      "h": 1032
-    },
+    "position": {},
     "autohide": true,
     "fullscreen": false,
     "maximized": true
@@ -111,9 +116,10 @@
     "Glorious Model O:mouse:4": {},
     "Usb KeyBoard Usb KeyBoard Consumer Control:mouse:4": {},
     "Virtual core XTEST pointer:mouse:2": {},
-    "Wayland Pointer:mouse:2": {}
+    "Wayland Pointer:mouse:2": {},
+    "Wayland Wheel Scrolling:mouse:2": {}
   },
-  "colors.current": "#000000",
+  "colors.current": "#ffffff",
   "colors.palette": {
     "name": "MyPaint Default",
     "columns": 7,
@@ -440,8 +446,8 @@
     "#aa6633",
     "#003153",
     "#0cff00",
-    "#ffffff",
-    "#000000"
+    "#000000",
+    "#ffffff"
   ],
   "autorecovery.check_at_startup": false,
   "brush_chooser.default.selected_group": "Ramon",

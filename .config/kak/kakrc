@@ -19,8 +19,10 @@ bundle kakboard https://github.com/lePerdu/kakboard %{
 }
 
 bundle smarttab https://github.com/andreyorst/smarttab.kak %{} %{
-	set-option global softtabstop 8
-	hook global WinSetOption .* noexpandtab
+	hook global WinSetOption .* %{
+        	noexpandtab
+        	set-option global softtabstop 8
+	}
 }
 
 bundle luar https://github.com/gustavo-hms/luar %{
@@ -69,7 +71,7 @@ hook global InsertCompletionHide .* %{
 
 # Tab stuff
 set-option global tabstop 8
-set-option global indentwidth 8
+set-option global indentwidth 0
 
 add-highlighter global/ wrap -word -indent
 

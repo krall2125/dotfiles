@@ -3,6 +3,7 @@ syntax on
 let g:mapleader=' '
 
 set tabstop=8
+set shiftwidth=8
 set smarttab
 set autoindent
 set backspace=indent,eol,start belloff=all
@@ -11,52 +12,60 @@ set noexpandtab
 set termguicolors
 set t_Co=256
 set clipboard=unnamedplus
+set signcolumn=number
+set list
+set listchars=tab:>\ ,eol:$,trail:·
+
+augroup
+	au!
+	au FileType * silent! setlocal tabstop=8 shiftwidth=8 noexpandtab
+augroup
 
 call plug#begin()
 
-Plug 'morhetz/gruvbox'
-" Plug 'prabirshrestha/vim-lsp'
-" Plug 'mattn/vim-lsp-settings'
+" Plug 'morhetz/gruvbox'
+" " Plug 'prabirshrestha/vim-lsp'
+" " Plug 'mattn/vim-lsp-settings'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-" Plug 'prabirshrestha/asyncomplete.vim'
-" Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-Plug 'rose-pine/vim', { 'as': 'rose-pine' }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" " Plug 'prabirshrestha/asyncomplete.vim'
+" " Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'christoomey/vim-tmux-navigator'
+" Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+" Plug 'rose-pine/vim', { 'as': 'rose-pine' }
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/NumUtils'
 
 call plug#end()
 
 set background=dark
 
-let g:gruvbox_contrast_dark='medium'
-let g:gruvbox_contrast_light='medium'
-let g:airline_theme='catppuccin_mocha'
+" let g:gruvbox_contrast_dark='hard'
+" let g:gruvbox_contrast_light='hard'
+" let g:airline_theme='gruvbox'
 
-colorscheme catppuccin_mocha
+" colorscheme gruvbox
 
-let g:asyncomplete_auto_completeopt = 0
+" let g:asyncomplete_auto_completeopt = 0
 
-set completeopt=menuone,noinsert,preview
+" set completeopt=menuone,noinsert,preview
 
 " inoremap <expr> <Tab>   pumvisible() ? "\<C-y>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-e>" : "\<S-Tab>"
 " inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() . "\<cr>" : "\<cr>"
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
-inoremap <expr> <Down> coc#pum#visible() ? coc#pum#next(1) : "\<C-o>gj"
-inoremap <expr> <Up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-o>gk"
+" inoremap <silent><expr> <TAB>
+"       \ coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+" inoremap <expr> <Down> coc#pum#visible() ? coc#pum#next(1) : "\<C-o>gj"
+" inoremap <expr> <Up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-o>gk"
 
-inoremap <expr> <S-Down> coc#pum#visible() ? coc#pum#cancel() . "<Down>" : "\<Down>"
-inoremap <expr> <S-Up> coc#pum#visible() ? coc#pum#cancel() . "<Up>" : "\<Up>"
-inoremap <expr> <S-TAB> coc#pum#visible() ? coc#pum#cancel() . "\<C-h>" : "\<C-h>"
+" inoremap <expr> <S-Down> coc#pum#visible() ? coc#pum#cancel() . "<Down>" : "\<Down>"
+" inoremap <expr> <S-Up> coc#pum#visible() ? coc#pum#cancel() . "<Up>" : "\<Up>"
+" inoremap <expr> <S-TAB> coc#pum#visible() ? coc#pum#cancel() . "\<C-h>" : "\<C-h>"
 
 inoremap <expr><S-TAB> "\<C-h>"
 nmap <leader>nx :Explore<CR>
@@ -77,27 +86,27 @@ vnoremap <silent> > >gv
 vnoremap <silent> J :m '>+1<CR>gv=gv
 vnoremap <silent> K :m '<-2<CR>gv=gv
 
-nnoremap <silent> <leader>ff :Files .<CR>
-nnoremap <silent> <leader>fg :GFiles<CR>
-nnoremap <silent> <leader>fc :Colors<CR>
+" nnoremap <silent> <leader>ff :Files .<CR>
+" nnoremap <silent> <leader>fg :GFiles<CR>
+" nnoremap <silent> <leader>fc :Colors<CR>
 
-set pastetoggle=<F3>
+" set pastetoggle=<F3>
 
-function! s:on_lsp_buffer_enabled() abort
-	setlocal omnifunc=lsp#complete
-	setlocal signcolumn=yes
-	if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-	nmap <buffer> gd <plug>(coc-definition)
-	nmap <buffer> gs <plug>(coc-document-symbol-search)
-	nmap <buffer> gS <plug>(coc-workspace-symbol-search)
-	nmap <buffer> gr <plug>(coc-references)
-	nmap <buffer> gi <plug>(coc-implementation)
-	nmap <buffer> gt <plug>(coc-type-definition)
-	nmap <buffer> <leader>rn <plug>(coc-rename)
-	nmap <buffer> [g <plug>(coc-previous-diagnostic)
-	nmap <buffer> ]g <plug>(coc-next-diagnostic)
-	nmap <buffer><silent> K :call CocActionAsync('doHover')<CR>
-	vmap <buffer><silent> <leader>ca <plug>(coc-codeaction-selected)
-endfunction
+" function! s:on_lsp_buffer_enabled() abort
+" 	setlocal omnifunc=lsp#complete
+" 	setlocal signcolumn=yes
+" 	if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+" 	nmap <buffer> gd <plug>(coc-definition)
+" 	nmap <buffer> gs <plug>(coc-document-symbol-search)
+" 	nmap <buffer> gS <plug>(coc-workspace-symbol-search)
+" 	nmap <buffer> gr <plug>(coc-references)
+" 	nmap <buffer> gi <plug>(coc-implementation)
+" 	nmap <buffer> gt <plug>(coc-type-definition)
+" 	nmap <buffer> <leader>rn <plug>(coc-rename)
+" 	nmap <buffer> [g <plug>(coc-previous-diagnostic)
+" 	nmap <buffer> ]g <plug>(coc-next-diagnostic)
+" 	nmap <buffer><silent> K :call CocActionAsync('doHover')<CR>
+" 	vmap <buffer><silent> <leader>ca <plug>(coc-codeaction-selected)
+" endfunction
 
-call s:on_lsp_buffer_enabled()
+" call s:on_lsp_buffer_enabled()
