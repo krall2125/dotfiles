@@ -1,1 +1,1 @@
-/home/krallbert/dotfiles/.config/kak/plugins/base16-gruvbox.kak/colors/base16-gruvbox-dark-hard.kak
+/home/krallbert/.config/kak/bundle/base16-gruvbox.kak/colors/base16-gruvbox-dark-hard.kak

@@ -7,5 +7,5 @@ mako &
 swww-daemon &
 swww img ~/Wallpapers/alexcirce.png &
 nm-applet --indicator &
-doas kanata -c ~/.config/kanata/config.kbd &
+# doas kanata -c ~/.config/kanata/config.kbd &
 /usr/lib/xdg-desktop-portal-hyprland &

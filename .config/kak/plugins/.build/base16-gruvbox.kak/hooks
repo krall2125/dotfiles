@@ -1,5 +1,0 @@
-
-set -e
-
-	mkdir -p $HOME/.config/kak/colors
-	find $PWD -type f -name "*.kak" -exec ln -sf {} $HOME/.config/kak/colors/ \;

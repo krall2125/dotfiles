@@ -5,9 +5,9 @@ nop %sh{
 }
 
 evaluate-commands %sh{
-	mkdir -p $HOME/.config/kak/autoload/bundle/
-	[ ! -e "$kak_config/autoload/bundle" ] && \
-            git clone https://codeberg.org/jdugan6240/kak-bundle $HOME/.config/kak/autoload/bundle/kak-bundle
+	mkdir -p $kak_config/autoload/bundle/
+	[ ! -e "$kak_config/autoload/bundle/kak-bundle" ] && \
+            git clone https://codeberg.org/jdugan6240/kak-bundle $kak_config/autoload/bundle/kak-bundle
 }
 
 bundle kak-lsp https://github.com/kak-lsp/kak-lsp %{
@@ -39,7 +39,7 @@ bundle-noload base16-gruvbox https://github.com/andreyorst/base16-gruvbox.kak
 bundle-install-hook base16-gruvbox %{
 	# Post-install code here...
 	mkdir -p ${kak_config}/colors
-	ln -sf "${kak_opt_bundle_path}/base16-gruvbox" "${kak_config}/colors/"
+	ln -sf "${kak_config}/bundle/base16-gruvbox.kak/colors/base16-gruvbox-dark-hard.kak" "${kak_config}/colors/"
 }
 
 colorscheme base16-gruvbox-dark-hard # or any other variant

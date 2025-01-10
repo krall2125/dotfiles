@@ -51,6 +51,7 @@ cmp.setup({
 				nvim_lsp = "[LSP]",
 				luasnip = "[LuaSnip]",
 				nvim_lua = "[Lua]",
+				path = "[Path]"
 			})
 		}),
 	}

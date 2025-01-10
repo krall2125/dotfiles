@@ -17,6 +17,8 @@ vim.opt.list = true
 vim.opt.tabstop = 8
 vim.opt.shiftwidth = 8
 
+vim.opt.colorcolumn = "80"
+
 vim.opt.background = "dark"
 
 vim.opt.guicursor = "n-v-c-i:block"

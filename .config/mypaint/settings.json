@@ -39,7 +39,7 @@
   "ui.dark_theme_variant": true,
   "ui.rendered_tile_cache_size": 16384,
   "saving.default_format": "openraster",
-  "brushmanager.selected_brush": "ramon/Pen",
+  "brushmanager.selected_brush": "ramon/Delayed_",
   "brushmanager.selected_groups": [],
   "frame.color_rgba": [
     0.12,
@@ -62,27 +62,17 @@
         }
       ],
       "w": 23,
-      "h": 930
+      "h": 934
     },
     "right_sidebar": {
       "groups": [
-        {
-          "tools": [
-            [
-              "MyPaintLayersTool"
-            ]
-          ],
-          "active_page": 0,
-          "w": 320,
-          "h": 412
-        },
         {
           "tools": [],
           "active_page": -1
         }
       ],
-      "w": 320,
-      "h": 930
+      "w": 23,
+      "h": 934
     },
     "floating": [],
     "position": {},

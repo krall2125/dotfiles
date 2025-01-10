@@ -36,12 +36,12 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec_always xinput set-prop 11 "libinput Accel Profile Enabled" 0 1 0
 
-exec --no-startup-id xrandr -r 144
+exec --no-startup-id xrandr --output DisplayPort-2 --mode 1920x1080 --rate 144
 
-exec --no-startup-id setxkbmap us intl
+exec --no-startup-id pipewire
+
+exec_always --no-startup-id setxkbmap us intl
 exec_always --no-startup-id autotiling
-
-exec --no-startup-id emacs --daemon
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -66,7 +66,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec sakura
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+c kill
