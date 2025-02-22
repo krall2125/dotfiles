@@ -34,13 +34,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # exec --no-startup-id nm-applet
 
-exec_always xinput set-prop 11 "libinput Accel Profile Enabled" 0 1 0
-
 exec --no-startup-id xrandr --output DisplayPort-2 --mode 1920x1080 --rate 144
 
 exec --no-startup-id pipewire
 
-exec_always --no-startup-id setxkbmap us intl
 exec_always --no-startup-id autotiling
 
 # Use pactl to adjust volume in PulseAudio.

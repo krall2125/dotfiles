@@ -14,6 +14,7 @@ require("lualine").setup({
 		always_divide_middle = true,
 	},
 	sections = {
+		lualine_b = {"FugitiveHead"},
 		lualine_c = {"filename"},
 		lualine_x = {"string.format(\"%s (neovim)\", vim.bo.filetype)"},
 		lualine_y = {"string.format(\"%s[%s]\", vim.bo.fileencoding, vim.bo.fileformat)"},

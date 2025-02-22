@@ -1,50 +1,25 @@
 * {
-    font-family: "Iosevka Nerd Font";
-    font-size: 18;
+    font-family: "MartianMono Nerd Font";
+    font-size: 12px;
 }
 
-window {
-    background-color: #181825;
-    color: #b4befe;
-    border: 4px solid #b4befe;
-    border-radius: 8px;
-    outline: none;
-}
+@define-color bg #282828;
+@define-color red #cc241d;
+@define-color green #98971a;
+@define-color yellow #d79921;
+@define-color blue #458588;
+@define-color purple #b16286;
+@define-color aqua #689d6a;
+@define-color gray #a89984;
+@define-color fg #ebdbb2;
 
-#outer-box {
-    background-color: #181825;
-    color: #b4befe;
-    border: 4px solid #b4befe;
-    border-radius: 8px;
-}
-
-#input {
-    margin: 4px;
-    background-color: #181825;
-    color: #b4befe;
+* {
+    background-color: @bg;
+    color: @fg;
     border: none;
-    border-radius: 0;
     outline: none;
-}
-
-#scroll {
-    background-color: #181825;
-    color: #b4befe;
-    outline: none;
-    border: none;
-}
-
-#img {
-    margin-right: 8px;
 }
 
 #entry:selected {
-    background-color: #b4befe;
-    color: #cdd6f4;
-    outline: none;
-}
-
-#input:focus {
-    outline: none;
-    border: none;
+    background-color: @blue;
 }

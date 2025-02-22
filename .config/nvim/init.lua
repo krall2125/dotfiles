@@ -11,8 +11,16 @@ vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
+vim.opt.ignorecase = true
+
+vim.opt.showmode = false
 
 vim.opt.list = true
+vim.opt.listchars = {
+	tab = "» ",
+	nbsp = "·",
+	trail = "×"
+}
 
 vim.opt.tabstop = 8
 vim.opt.shiftwidth = 8
@@ -41,6 +49,13 @@ require("config.lualine")
 require("config.harpoon")
 require("config.treesitter")
 require("config.telescope")
-require("config.lsp")
+
+require("config.keys.undotree")
+
+vim.g.gruvbox_material_background = 'hard'
+vim.g.gruvbox_material_foreground = 'material'
+vim.g.gruvbox_material_enable_italic = true
+vim.g.gruvbox_material_enable_bold = true
+vim.g.gruvbox_material_better_performance = true
 
 vim.cmd.colorscheme("gruvbox")

@@ -39,7 +39,7 @@
   "ui.dark_theme_variant": true,
   "ui.rendered_tile_cache_size": 16384,
   "saving.default_format": "openraster",
-  "brushmanager.selected_brush": "ramon/Delayed_",
+  "brushmanager.selected_brush": "ramon/Pen",
   "brushmanager.selected_groups": [],
   "frame.color_rgba": [
     0.12,
@@ -62,23 +62,38 @@
         }
       ],
       "w": 23,
-      "h": 934
+      "h": 944
     },
     "right_sidebar": {
       "groups": [
+        {
+          "tools": [
+            [
+              "MyPaintLayersTool"
+            ]
+          ],
+          "active_page": 0,
+          "w": 320,
+          "h": 914
+        },
         {
           "tools": [],
           "active_page": -1
         }
       ],
-      "w": 23,
-      "h": 934
+      "w": 320,
+      "h": 944
     },
     "floating": [],
-    "position": {},
+    "position": {
+      "x": 0,
+      "y": 0,
+      "w": 1918,
+      "h": 1053
+    },
     "autohide": true,
     "fullscreen": false,
-    "maximized": true
+    "maximized": false
   },
   "input.button_mapping": {
     "Button2": "PanViewMode",
