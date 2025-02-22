@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+volume=$(pactl get-sink-volume @DEFAULT_SINK@ | sed 's/Volume: front-left: [0-9]* \/ *\([0-9]*%\) \/ [0-9\-]*.[0-9]*.*/\1/;t;d')
+
+echo "date:" $(date +'%d/%m/%Y %X') "| volume:" $volume
